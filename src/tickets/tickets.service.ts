@@ -24,7 +24,7 @@ export class TicketsService {
     });
   }
 
-  async findOne(id: number): Promise<Ticket> {
+  async findOne(id: string): Promise<Ticket> {
     return new Promise((resolve, reject) => {
       this.dbService.getTicketDatastore().findOne({ id }, (err, doc) => {
         if (err) reject(err);
@@ -34,7 +34,7 @@ export class TicketsService {
     });
   }
 
-  async update(id: number, ticket: Ticket): Promise<Ticket> {
+  async update(id: string, ticket: Ticket): Promise<Ticket> {
     return new Promise((resolve, reject) => {
       this.dbService.getTicketDatastore().update({ id }, ticket, {}, (err, numReplaced) => {
         if (err) reject(err);
@@ -44,7 +44,7 @@ export class TicketsService {
     });
   }
 
-  async remove(id: number): Promise<void> {
+  async remove(id: string): Promise<void> {
     return new Promise((resolve, reject) => {
       this.dbService.getTicketDatastore().remove({ id }, {}, (err, numRemoved) => {
         if (err) reject(err);

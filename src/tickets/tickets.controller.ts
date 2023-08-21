@@ -28,7 +28,7 @@ export class TicketsController {
   @ApiResponse({ status: 200, description: 'Ticket listado com sucesso' })
   @ApiResponse({ status: 400, description: 'Requisição inválida.' })
   @ApiResponse({ status: 404, description: 'Ticket não encontrado' })
-  findOne(@Param('id') id: number) {
+  findOne(@Param('id') id: string) {
     return this.ticketsService.findOne(id);
   }
 
@@ -37,7 +37,7 @@ export class TicketsController {
   @ApiResponse({ status: 200, description: 'Ticket atualizado com sucesso' })
   @ApiResponse({ status: 400, description: 'Requisição inválida.' })
   @ApiResponse({ status: 404, description: 'Ticket não encontrado' })
-  update(@Param('id') id: number, @Body() ticket: Ticket) {
+  update(@Param('id') id: string, @Body() ticket: Ticket) {
     return this.ticketsService.update(id, ticket);
   }
 
@@ -46,7 +46,7 @@ export class TicketsController {
   @ApiResponse({ status: 200, description: 'Ticket deletado com sucesso' })
   @ApiResponse({ status: 400, description: 'Requisição inválida.' })
   @ApiResponse({ status: 404, description: 'Ticket não encontrado' })
-  remove(@Param('id') id: number) {
+  remove(@Param('id') id: string) {
     return this.ticketsService.remove(id);
   }
 }
