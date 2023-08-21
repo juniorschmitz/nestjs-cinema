@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { MoviesController } from './movies.controller';
-import { DbService } from '../db/db.service';
-import { IsMovieTitleUnique } from './isMovieTitleUnique';
+import { DBModule } from '../db/db.module';
 
 @Module({
-  providers: [MoviesService, DbService, IsMovieTitleUnique],
+  imports: [DBModule],
+  providers: [MoviesService],
   controllers: [MoviesController]
 })
 export class MoviesModule {}

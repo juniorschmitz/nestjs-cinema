@@ -1,6 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, IsString } from 'class-validator';
-import { IsUniqueTitle } from './isMovieTitleUnique';
 
 export class Movie {
   @ApiProperty({ description: 'ID do filme' })
@@ -9,7 +8,6 @@ export class Movie {
   @ApiProperty({ description: 'Título do filme' })
   @IsNotEmpty()
   @IsString()
-  @IsUniqueTitle()
   title: string;
 
   @ApiProperty({ description: 'Descrição do filme' })

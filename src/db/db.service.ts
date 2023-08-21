@@ -7,8 +7,8 @@ export class DbService implements OnModuleInit {
   private tickets: Datastore;
 
   onModuleInit() {
-    this.movies = new Datastore({ filename: 'movies.db', autoload: true });
-    this.tickets = new Datastore({ filename: 'tickets.db', autoload: true });
+    this.movies = new Datastore({ filename: './movies.db', autoload: true });
+    this.tickets = new Datastore({ filename: './tickets.db', autoload: true });
   }
 
   getMovieDatastore() {
