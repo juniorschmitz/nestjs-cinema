@@ -10,14 +10,14 @@ export class Ticket {
 
   @ApiProperty({ description: 'Número do assento' })
   @IsNotEmpty({ message: 'Número do assento é mandatório' })
-  @IsNumber({ message: 'Número do assento deve ser numérico'})
+  @IsNumber()
   @Min(0, { message: 'Valor do assento deve ser maior ou igual a 0' })
   @Max(99, { message: 'Valor do assento deve ser menor ou igual a 100' })
   seatNumber: number;
 
   @ApiProperty({ description: 'Preço do ingresso' })
   @IsNotEmpty({ message: 'Preço do ingresso é mandatório' })
-  @IsNumber({ message: 'Preço do ingresso deve ser numérico' })
+  @IsNumber()
   @Min(0, { message: 'Preço deve ser maior ou igual a 0' })
   @Max(60, { message: 'Preço deve ser menor ou igual a 60' })
   price: number;
